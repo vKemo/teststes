@@ -7,13 +7,13 @@ pipeline {
         string(name: 'REPORT_BUCKET', description: 'S3 Report Bucket Name')
         string(name: 'BATCH_OPERATION_ROLE_ARN', description: 'Batch Operation IAM Role Name')
         string(name: 'BUILDER_ROLE_ARN', description: 'Builder Role to be Assumed')
-        string(name: 'AWS_REGION', description: 'AWS Region for Source Bucket')
+        string(name: 'AWS_REGION', defaultValue: 'us-east-1', description: 'AWS Region for Source Bucket')
     }
 
     stages{
         stage('Clone Repository'){
             steps {
-                git branch: 'main', url: 'https://bbgithub.dev.bloomberg.com/Media-Infrastructure/aws-s3-batch-operation-python'
+                git branch: 'main', url: 'https://github.com/vKemo/teststes'
             }
         }
         stage('Install requierment'){
