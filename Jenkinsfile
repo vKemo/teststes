@@ -16,6 +16,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vKemo/teststes'
             }
         }
+        stage('check shell'){
+            steps{
+                sh('''#!bin/bash
+                      ls
+                
+                ''')
+            }
+        }
         stage('Install requierment'){
             steps{
                 sh '''#!bin/bash
