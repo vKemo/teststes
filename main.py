@@ -101,7 +101,7 @@ def parse_arguments() -> argparse.Namespace:
 
     return parser.parse_args()
 
-if _name_ == '__main__':
+if __name__ == '__main__':
     args = parse_arguments()
     credentials = assume_builder_role(args.builder_role_arn)
     create_batch_operation_job(
