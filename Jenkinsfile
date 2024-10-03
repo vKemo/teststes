@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Create Batch Operation'){
             steps {
-                sh '''#!bin/bash
+                sh '''#!/bin/bash
                     source venv/bin/activate
                     python3 -m main --source_aws_account_id=${SOURCE_AWS_ACCOUNT_ID} --source_bucket=${SOURCE_BUCKET}  --report_bucket=${REPORT_BUCKET} --builder_role_arn=${BUILDER_ROLE_ARN} --batch_operation_role_arn=${BATCH_OPERATION_ROLE_ARN} --aws_region=${AWS_REGION}
                 '''
