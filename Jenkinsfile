@@ -18,7 +18,7 @@ pipeline {
         }
         stage('check shell'){
             steps{
-                sh('''#!bin/bash
+                sh('''#!/bin/bash
                       ls
                 
                 ''')
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Install requierment'){
             steps{
-                sh '''#!bin/bash
+                sh '''#!/bin/bash
                     python3 -m venv venv
                     source venv/bin/activate
                     pip install boto3
